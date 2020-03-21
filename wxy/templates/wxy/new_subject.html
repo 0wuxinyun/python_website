@@ -1,0 +1,16 @@
+
+{% extends 'wxy/base.html' %}
+{% block content %}
+  <p>ADD A NEW SUBJECT:</p>
+  <form method='post' action='{% url "wxy:new_subject" %}'>
+    {% csrf_token %}
+    {{form.as_p}}
+    <button name='submit'>ADD!</button>
+
+  </form>
+  
+    
+
+
+
+{% endblock content %}

@@ -1,0 +1,15 @@
+
+{% extends 'wxy/base.html' %}
+{% block content %}
+  
+  <ul>
+    {% for subject in subjects %}
+      <li><a href="{% url 'wxy:subject' subject.id %}">{{subject}}</a></li>
+    {% empty %}
+      <li>NOTHING!!!</li>
+    {% endfor %}
+  </ul>
+  <p>
+    <a href="{% url 'wxy:new_subject' %}"> ADD A NEW ONE </a>
+  </p>
+{% endblock content %}

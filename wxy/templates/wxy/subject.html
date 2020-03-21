@@ -1,0 +1,27 @@
+
+
+{% extends 'wxy/base.html' %}
+{% block content %}
+  <p>SUBJECT: {{subject}} </p>
+  <ul>
+    {% for note in notes %}
+      <li>
+        <p>{{note.date|date:'M d, Y H:i '}}</p>
+        <p>{{note.text|linebreaks}}</p>
+        <p>
+          <a href="{% url 'wxy:edit_note' note.id %}">EDIT THIS</a>
+        </p>
+      </li>
+    {% empty %}
+      <li>NOTHING!!!</li>
+    {% endfor %}
+  </ul>
+  <p>
+    <a href="{% url 'wxy:new_note' subject.id %}">ADD ONE</a>
+  </p>
+    
+  
+
+  
+
+{% endblock content %}

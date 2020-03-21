@@ -1,0 +1,13 @@
+
+{% extends 'wxy/base.html' %}
+{% block content%}
+  
+  <form method='post' action="{% url 'users:register' %}">
+    {% csrf_token %}
+    {{form.as_p}}
+    <button name='submit'>START!</button>
+  </form>
+
+
+
+{% endblock content%}
